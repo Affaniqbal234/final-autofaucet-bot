@@ -1,10 +1,15 @@
-# Final AutoClaim BOT
+<p align="center">
+    <img src="assets/logo.png"
+    width="200" alt="FinalAutofaucetBotLogo">
+    </p>
+
+# Final Autofaucet BOT
 
 Automated cryptocurrency faucet claiming bot for autofaucet.dutchycorp.space with Cloudflare Turnstile captcha solving.
 
 **Version:** 1.0.0  
 **GitHub:** [github.com/Affaniqbal234/final-autofaucet-bot](https://github.com/Affaniqbal234/final-autofaucet-bot)  
-**Author:** [@Affaniqbal234](https://github.com/Affaniqbal234)
+**Author:** Affan [@Affaniqbal234](https://github.com/Affaniqbal234)
 
 ## Features
 
