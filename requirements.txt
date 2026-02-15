@@ -1,0 +1,8 @@
+# Browser automation with captcha solving capabilities
+patchright>=1.0.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Rich terminal output formatting
+rich>=13.0.0
