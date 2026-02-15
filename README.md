@@ -11,6 +11,9 @@ Automated cryptocurrency faucet claiming bot for autofaucet.dutchycorp.space wit
 **GitHub:** [github.com/Affaniqbal234/final-autofaucet-bot](https://github.com/Affaniqbal234/final-autofaucet-bot)  
 **Author:** Affan [@Affaniqbal234](https://github.com/Affaniqbal234)
 
+### Terminal Output
+![Terminal Banner](assets/banner.png)
+
 ## Features
 
 - Automated login with email/password
@@ -29,6 +32,11 @@ Automated cryptocurrency faucet claiming bot for autofaucet.dutchycorp.space wit
 - Google Chrome browser installed
 - Active account on [autofaucet.dutchycorp.space](https://autofaucet.dutchycorp.space)
 - **Important:** Select Cloudflare Turnstile as the default captcha in your account settings first
+
+###AutoFaucetDutchyCorpSpace
+![Dutchy Signup](assets/AutofaucetDutchycorpSpace.png)
+![Dutchy Dashboard](assets/AutofaucetDutchycorpSpace2.png)
+
 
 ## Installation
 
@@ -89,6 +97,7 @@ The bot will automatically:
 6. Process available PTC ads
 7. Process PTC Wall ads
 8. Display completion message
+![Working](assets/working.png)
 
 ## Troubleshooting
 

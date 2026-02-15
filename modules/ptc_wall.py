@@ -71,7 +71,7 @@ async def process_ptc_wall(page, ptc_wall_url):
                     total += 1
                     print_success(f"[PTC_WALL] Ad {total} done")
                     with suppress(Exception):
-                        print_info(await page.locator('xpath=/html/body/div[4]/div[9]/div[2]/center[3]/div[2]').inner_text(timeout=8000))
+                        print_info(await page.locator('xpath=/html/body/div[4]/div[9]/div[2]/center[3]/div[2]').inner_text(timeout=12000))
                 else:
                     print_error("[PTC_WALL] No submit button found")
                 
