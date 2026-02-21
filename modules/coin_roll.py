@@ -39,7 +39,7 @@ async def coin_roll(page, coin_roll_url, unlock_selector, claim_selector, ad_vid
         await close_secondary_pages(page)
         await asyncio.sleep(2)
         with suppress(Exception):
-            print_info(await page.locator('xpath=/html/body/div[4]/div[10]/div[2]/div[2]/div[3]/p').text_content(timeout=12000))
+            print_info(await page.locator('xpath=/html/body/div[4]/div[10]/div[2]/div[2]/div[2]').text_content(timeout=12000))
         return page
         
         

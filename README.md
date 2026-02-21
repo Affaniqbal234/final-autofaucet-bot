@@ -12,20 +12,20 @@ Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloud
         <img src="https://img.shields.io/badge/Python-3.8+-blue">
     </a>
     <a>
-        <img src="https://img.shields.io/badge/Patchright-Playwright-blue">
+        <img src="https://img.shields.io/badge/Patchright-Playwright-green">
     </a>
-    <a href="https://img.shields.io/badge/Browser-Chrome-blue">
-        <img src="https://www.google.com/chrome/">
+    <a href="https://www.google.com/chrome/">
+        <img src="https://img.shields.io/badge/Browser-Chrome-green">
     </a>
     <br/>
-    <a href="https://github.com/Affaniqbal234/final-autofaucet-bot/releases/latest">
+    <a href="hhttps://github.com/Affaniqbal234/final-autofaucet-bot/releases/tag/v1.0.0">
         <img alt="FinalAutofaucetBot Version" src="https://img.shields.io/badge/Version-v1.0.0-blue">
     </a>
     <a href="https://github.com/Affaniqbal234/final-autofaucet-bot">
         <img src="https://img.shields.io/badge/github-repo-blue?logo=github">
     </a>
     <a href="https://github.com/Affaniqbal234/final-autofaucet-bot/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/License-MIT-blue">
+        <img src="https://img.shields.io/badge/License-MIT-green">
     </a>
 </p>
 
