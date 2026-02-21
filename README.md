@@ -1,15 +1,33 @@
 <p align="center">
     <img src="assets/logo.png"
-    width="200" alt="FinalAutofaucetBotLogo">
+    width="150" alt="FinalAutofaucetBotLogo">
     </p>
 
 # Final Autofaucet BOT
 
-Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloudflare Turnstile captcha solving. The bot is built using Python and patchright(Undetected version of playwright automation library) to avoid bot detection. 
+Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloudflare Turnstile captcha solving. The bot is built using Python and Patchright (Playwright).
 
-**Version:** 1.0.0  
-**GitHub:** [github.com/Affaniqbal234/final-autofaucet-bot](https://github.com/Affaniqbal234/final-autofaucet-bot)  
-**Author:** Affan [@Affaniqbal234](https://github.com/Affaniqbal234)
+<p align="center">
+    <a href="https://www.python.org/">
+        <img src="https://img.shields.io/badge/Python-3.8+-blue">
+    </a>
+    <a>
+        <img src="https://img.shields.io/badge/Patchright-Playwright-blue">
+    </a>
+    <a href="https://img.shields.io/badge/Browser-Chrome-blue">
+        <img src="https://www.google.com/chrome/">
+    </a>
+    <br/>
+    <a href="https://github.com/Affaniqbal234/final-autofaucet-bot/releases/latest">
+        <img alt="FinalAutofaucetBot Version" src="https://img.shields.io/badge/Version-v1.0.0-blue">
+    </a>
+    <a href="https://github.com/Affaniqbal234/final-autofaucet-bot">
+        <img src="https://img.shields.io/badge/github-repo-blue?logo=github">
+    </a>
+    <a href="https://github.com/Affaniqbal234/final-autofaucet-bot/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-blue">
+    </a>
+</p>
 
 ## Features
 
@@ -42,10 +60,11 @@ cd final-autofaucet-bot
 pip install -r requirements.txt
 ```
 
-3. Install Chrome browser for Patchright (required for automation):
+3. Install Chrome browser(required for automation):
 ```bash
 patchright install chrome
 ```
+(or via any other installation method)
 
 4. Create configuration file:
 ```bash
@@ -70,7 +89,7 @@ Edit the `.env` file with the following settings:
 
 ### Headless Mode Warning
 
-⚠️ **IMPORTANT:** Setting `HEADLESS=true` may significantly increase the risk of account ban. Websites can detect headless browsers and may flag them as bots. It's strongly recommended to keep `HEADLESS=false` to avoid bot detections.
+⚠️ **IMPORTANT:** Setting `HEADLESS=true` may significantly increase the risk of account ban. Websites can detect headless browsers and may flag them as bots. It's strongly recommended to keep `HEADLESS=false` for safer operation.
 
 ## Usage
 
@@ -106,10 +125,6 @@ python main.py
 - Make sure Cloudflare Turnstile is set as your default captcha type in account settings
 - If issues persist, try running without headless mode
 
-## Disclaimer
-
-This bot is provided for educational purposes. The author is not responsible for any misuse, violations of terms of service, or account bans. Use at your own risk and in accordance with the website's terms of service.
-
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
@@ -126,4 +141,10 @@ Contributions are welcome! Feel free to:
 If you found this project useful, please give it a ⭐ on GitHub!
 
 For issues or questions, please open an issue on the [GitHub repository](https://github.com/Affaniqbal234/final-autofaucet-bot/issues).
+
+## Disclaimer
+
+This bot is provided for educational purposes. The author is not responsible for any misuse, violations of terms of service, or account bans. Use at your own risk and in accordance with the website's terms of service.
+
+**Author:** [Affaniqbal234](https://github.com/Affaniqbal234)
 
