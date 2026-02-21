@@ -5,25 +5,21 @@
 
 # Final Autofaucet BOT
 
-Automated cryptocurrency faucet claiming bot for autofaucet.dutchycorp.space with Cloudflare Turnstile captcha solving.
+Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloudflare Turnstile captcha solving. The bot is built using Python and patchright(Undetected version of playwright automation library) to avoid bot detection. 
 
 **Version:** 1.0.0  
 **GitHub:** [github.com/Affaniqbal234/final-autofaucet-bot](https://github.com/Affaniqbal234/final-autofaucet-bot)  
 **Author:** Affan [@Affaniqbal234](https://github.com/Affaniqbal234)
 
-### Terminal Output
-![Terminal Banner](assets/banner.png)
-
 ## Features
 
 - Automated login with email/password
-- Cloudflare Turnstile captcha solver (built-in)
+- Cloudflare Turnstile captcha solver
 - Dutchy Roll faucet claiming
 - Coin Roll faucet claiming
 - PTC ads processing
 - PTC Wall ads processing
 - Persistent browser sessions (cookies saved)
-- Clean terminal output with colors
 - Optional headless mode (not recommended)
 
 ## Requirements
@@ -32,12 +28,6 @@ Automated cryptocurrency faucet claiming bot for autofaucet.dutchycorp.space wit
 - Google Chrome browser installed
 - Active account on [autofaucet.dutchycorp.space](https://autofaucet.dutchycorp.space)
 - **Important:** Select Cloudflare Turnstile as the default captcha in your account settings first
-
-### AutoFaucetDutchyCorpSpace
-
-![Dutchy Signup](assets/AutofaucetDutchycorpSpace.png)
-![Dutchy Dashboard](assets/AutofaucetDutchycorpSpace2.png)
-
 
 ## Installation
 
@@ -80,7 +70,7 @@ Edit the `.env` file with the following settings:
 
 ### Headless Mode Warning
 
-⚠️ **IMPORTANT:** Setting `HEADLESS=true` may significantly increase the risk of account ban. Websites can detect headless browsers and may flag them as bots. It's strongly recommended to keep `HEADLESS=false` for safer operation.
+⚠️ **IMPORTANT:** Setting `HEADLESS=true` may significantly increase the risk of account ban. Websites can detect headless browsers and may flag them as bots. It's strongly recommended to keep `HEADLESS=false` to avoid bot detections.
 
 ## Usage
 
@@ -88,16 +78,13 @@ Run the bot:
 ```bash
 python main.py
 ```
+### Terminal Output
+![Terminal Banner](assets/banner.png)
 
-The bot will automatically:
-1. Display the banner with version info
-2. Log in to your account
-3. Handle cookie consent and UI elements
-4. Claim Dutchy Roll faucet
-5. Claim Coin Roll faucet
-6. Process available PTC ads
-7. Process PTC Wall ads
-8. Display completion message
+### AutoFaucetDutchyCorpSpace
+
+![Dutchy Signup](assets/AutofaucetDutchycorpSpace.png)
+![Dutchy Dashboard](assets/AutofaucetDutchycorpSpace2.png)
 
 ## Troubleshooting
 
@@ -115,38 +102,9 @@ The bot will automatically:
 - Ensure you selected Cloudflare Turnstile as default captcha in account settings
 - Check your internet connection
 
-### Browser doesn't close
-- The bot should close automatically after completion
-- If not, manually close Chrome - your session will be saved for next run
-
 ### Captcha not solving
 - Make sure Cloudflare Turnstile is set as your default captcha type in account settings
 - If issues persist, try running without headless mode
-
-## Project Structure
-
-```
-final-autofaucet-bot/
-├── main.py                 # Main entry point
-├── config/
-│   └── settings.py         # Configuration loader
-├── core/
-│   ├── browser.py          # Browser management
-│   ├── captcha.py          # Captcha solving
-│   └── page_helpers.py     # Page interaction utilities
-├── modules/
-│   ├── login.py            # Login functionality
-│   ├── dutchy_roll.py      # Dutchy Roll claiming
-│   ├── coin_roll.py        # Coin Roll claiming
-│   ├── ptc.py              # PTC ads processing
-│   └── ptc_wall.py         # PTC Wall processing
-├── utils/
-│   ├── output.py           # Terminal output formatting
-│   └── state.py            # State management
-├── .env                    # Your configuration (create from .env.example)
-├── .env.example            # Example configuration
-└── requirements.txt        # Python dependencies
-```
 
 ## Disclaimer
 
