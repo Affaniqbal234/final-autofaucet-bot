@@ -40,6 +40,8 @@ def print_error(message):
 def print_info(message):
     console.print(f"[blue]ℹ️  {message}[/blue]")
 
+def print_wait(message):
+    console.print(f"[yellow1]ℹ️  {message}[/yellow1]")
 
 def print_section(title):
     console.print(f"\n[bold cyan]{'='*80}[/bold cyan]")

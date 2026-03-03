@@ -2,7 +2,7 @@ import asyncio
 import sys
 from contextlib import suppress
 from core.page_helpers import safe_click, close_secondary_pages
-from utils.output import print_success, print_error, print_info
+from utils.output import print_success, print_error, print_info, print_wait
 
 
 async def login(page, email, password, login_url):
@@ -11,7 +11,7 @@ async def login(page, email, password, login_url):
             print_info("DUTCHY Balance: " + await page.locator('xpath=//*[@id="dashboard-content"]/div[3]/div/div[1]/div[3]/div[4]/div/div/div[2]/div/div[1]/div[1]/div[2]/h4').inner_text(timeout=10000))
             print_info("Current Level: " + await page.locator('xpath=//*[@id="dashboard-content"]/div[3]/div/div[1]/div[3]/div[4]/div/div/div[1]/div/div[1]/div[1]/div[2]/h4').inner_text(timeout=3000))
             print_info("Progess to next level: " + await page.locator('xpath=//*[@id="dashboard-content"]/div[3]/div/div[1]/div[3]/div[3]/div/b/center').inner_text(timeout=3000))
-    print_info("Logging in...")
+    print_info("Logging in process...")
     try:
         await page.goto(login_url, wait_until="domcontentloaded")
         await close_secondary_pages(page)
@@ -19,17 +19,21 @@ async def login(page, email, password, login_url):
         
         with suppress(Exception):
             await page.wait_for_url("**/dashboard.php", timeout=5000)
-            print_success("Already Logged in!")
+            print_success("Great! Already Logged in!")
             await balance()
             return
-        
+        print_info("Waiting 15 sec for login page to appear")
         await page.wait_for_selector('input[name="username"]', timeout=15000)
+        print_success("Login page found.")
+
         await page.fill('input[name="username"]', email)
+        print_success("Entered email")
         await asyncio.sleep(1)
         await page.fill('input[name="password"]', password)
+        print_success("Entered password")
         await safe_click(page, 'button[name="login-btn"]', timeout=40000, captcha=True, output="Login submitted.")
         await asyncio.sleep(2)
-        
+        print_wait("Waiting for dashboard page to fully load to verify if login succesful")
         await page.wait_for_url("**/dashboard.php", timeout=35000)
         print_success("Login successful!")
         await balance()
@@ -37,12 +41,12 @@ async def login(page, email, password, login_url):
         
     except Exception:
         try:
-            print_info("Network is slow, waiting longer...")
+            print_info("Checking if already logged in...")
             await page.wait_for_url("**/dashboard.php", timeout=5000)
-            print_success("Already logged in.")
+            print_success("Great! Already logged in.")
             await balance()
             return
         except Exception:
-            print_error("Login failed, stopping bot... please restart the bot.")
+            print_error("Login failed. Please verify your credentials and network connection, then restart the bot.")
             await page.context.browser.close()
             sys.exit(1)
