@@ -3,7 +3,7 @@ import time
 from contextlib import suppress
 from core.captcha import solve_turnstile
 from core.page_helpers import wait_submit_up_to, close_secondary_pages
-from utils.output import print_success, print_error, print_info
+from utils.output import print_success, print_error, print_info, print_wait
 
 
 async def process_ptc_wall(page, ptc_wall_url):
@@ -39,7 +39,7 @@ async def process_ptc_wall(page, ptc_wall_url):
                     await page.goto(ptc_wall_url, wait_until="domcontentloaded")
                     print_info("[PTC_WALL] Reloading PTC_WALL page...")
                 else:
-                    print_success("[PTC_WALL] All DONE")
+                    print_success("[PTC_WALL] DONE")
                     break
             
             with suppress(Exception):
@@ -47,7 +47,8 @@ async def process_ptc_wall(page, ptc_wall_url):
                 await locator2.wait_for(state="visible", timeout=5000)
                 text2 = await locator2.inner_text()
                 if "All Internal PTC ads completed." in text2:
-                    print_success("[PTC_WALL] All Internal PTC ads completed.")
+                    print_info("[PTC_WALL] All Internal PTC ads completed.")
+                    print_success("[PTC_WALL] DONE")
                     return
             
             if handle:
@@ -56,7 +57,7 @@ async def process_ptc_wall(page, ptc_wall_url):
                 await asyncio.sleep(2)
                 await close_secondary_pages(page)
                 
-                print_info("[PTC_WALL] Waiting for Submit button.")
+                print_wait("[PTC_WALL] Waiting for Submit button.")
                 submit_btn = await wait_submit_up_to(page, 60000)
                 
                 if submit_btn:

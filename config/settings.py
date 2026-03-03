@@ -1,6 +1,7 @@
 import os
 import sys
 from dotenv import load_dotenv
+from utils.output import print_error, print_wait
 
 
 class Config:
@@ -36,18 +37,18 @@ class Config:
         config.STATE_FILE = os.path.join(project_root, config.USER_DATA_DIR, "run_once.json")
         
         if not config.EMAIL:
-            print("ERROR: EMAIL is missing in .env")
-            print("Fix: copy .env.example to .env and set EMAIL=your_email")
+            print_error("ERROR: EMAIL is missing in .env")
+            print_error("Fix: copy .env.example to .env and set EMAIL=your_email")
             sys.exit(1)
         
         if not config.PASSWORD:
-            print("ERROR: PASSWORD is missing in .env")
-            print("Fix: copy .env.example to .env and set PASSWORD=your_password")
+            print_error("ERROR: PASSWORD is missing in .env")
+            print_error("Fix: copy .env.example to .env and set PASSWORD=your_password")
             sys.exit(1)
         
         if config.HEADLESS:
-            print("\n⚠️  WARNING: Headless mode is ENABLED!")
-            print("⚠️  This may increase the risk of account ban.")
-            print("⚠️  It's recommended to run with HEADLESS=false for safer operation.\n")
+            print_wait("\n⚠️  WARNING: Headless mode is ENABLED!")
+            print_wait("⚠️  This may increase the risk of account ban.")
+            print_wait("⚠️  It's recommended to run with HEADLESS=false for safer operation.\n")
         
         return config

@@ -2,7 +2,7 @@ import asyncio
 from contextlib import suppress
 from core.captcha import solve_turnstile
 from core.page_helpers import safe_click, close_secondary_pages, set_main_page
-from utils.output import print_success, print_error, print_info
+from utils.output import print_success, print_error, print_info, print_wait
 
 
 async def dutchy_roll(page, roll_game_url, unlock_selector, claim_selector, ad_video_button):
@@ -33,8 +33,8 @@ async def dutchy_roll(page, roll_game_url, unlock_selector, claim_selector, ad_v
         
         page = await set_main_page(page, roll_game_url)
         await close_secondary_pages(page)
+        print_wait("Waiting for roll claim button to be ready.")
         await asyncio.sleep(10)
-        
         await safe_click(page, claim_selector, timeout=30000, output="[DUTCHY ROLL] Successfully claimed.")
         await close_secondary_pages(page)
         await asyncio.sleep(2)

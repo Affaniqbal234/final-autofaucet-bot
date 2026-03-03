@@ -39,20 +39,12 @@ async def main():
             except Exception as e:
                 print_error(f"Minimized Chat button not found: {e}")
 
-        locator = page.locator('xpath=//*[@id="dashboard-content"]/div[3]/div/div[4]/div[5]/div[1]/div/a[11]/div[2]/div[1]/span[2]')
-        try:
-            text = await locator.text_content(timeout=2000)
-        except:
-            text = ""
-        if (text or "").strip() == "Ready!":
-            print_section("DUTCHY ROLL")
-            page = await dutchy_roll(page, config.ROLL_GAME_URL,config.UNLOCK_SELECTOR,
-                                    config.CLAIM_SELECTOR, config.AD_VIDEO_BUTTON)
-            print_section("COIN ROLL")
-            page = await coin_roll(page, config.COIN_ROLL_URL, config.UNLOCK_SELECTOR, 
-                                    config.CLAIM_SELECTOR, config.AD_VIDEO_BUTTON)
-        else:
-            print_error("Rolls Not Ready, Moving to PTC ADS...")
+        print_section("DUTCHY ROLL")
+        page = await dutchy_roll(page, config.ROLL_GAME_URL,config.UNLOCK_SELECTOR,
+                            config.CLAIM_SELECTOR, config.AD_VIDEO_BUTTON)
+        print_section("COIN ROLL")
+        page = await coin_roll(page, config.COIN_ROLL_URL, config.UNLOCK_SELECTOR, 
+                                config.CLAIM_SELECTOR, config.AD_VIDEO_BUTTON)
         print_section("PTC ADS")
         await process_ptc_list(page, config.PTC_URL)
         

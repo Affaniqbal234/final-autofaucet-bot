@@ -2,7 +2,7 @@ import asyncio
 from contextlib import suppress
 from core.captcha import solve_turnstile
 from core.page_helpers import wait_submit_up_to, close_secondary_pages
-from utils.output import print_success, print_error, print_info
+from utils.output import print_success, print_error, print_info, print_wait
 
 
 async def process_ptc_list(page, ptc_url):
@@ -18,14 +18,15 @@ async def process_ptc_list(page, ptc_url):
                 await locator1.wait_for(state="visible", timeout=5000)
                 text1 = await locator1.inner_text()
                 if "All Available Ads Watched" in text1:
-                    print_success("[PTC] All Available Ads Watched.")
+                    print_info("[PTC] All Available Ads Watched.")
+                    print_success("[PTC] Done")
                     return
             
-            print_info("[PTC] Waiting for Submit button to appear under 45 seconds")
+            print_wait("[PTC] Waiting for Submit button to appear under 45 seconds")
             btn = await wait_submit_up_to(page, 45000)
             
             if not btn:
-                print_success("[PTC] All DONE")
+                print_success("[PTC] Done")
                 return
             
             await asyncio.sleep(10)

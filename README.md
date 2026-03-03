@@ -9,7 +9,7 @@ Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloud
 
 <p align="center">
     <a href="https://www.python.org/">
-        <img src="https://img.shields.io/badge/Python-3.8+-blue">
+        <img src="https://img.shields.io/badge/Python-3.9+-blue">
     </a>
     <a>
         <img src="https://img.shields.io/badge/Patchright-Playwright-green">
@@ -18,8 +18,8 @@ Automated cryptocurrency claiming bot for autofaucet.dutchycorp.space with Cloud
         <img src="https://img.shields.io/badge/Browser-Chrome-green">
     </a>
     <br/>
-    <a href="hhttps://github.com/Affaniqbal234/final-autofaucet-bot/releases/tag/v1.0.0">
-        <img alt="FinalAutofaucetBot Version" src="https://img.shields.io/badge/Version-v1.0.0-blue">
+    <a href="hhttps://github.com/Affaniqbal234/final-autofaucet-bot/releases/tags">
+        <img alt="FinalAutofaucetBot Version" src="https://img.shields.io/badge/Version-v1.1.0-blue">
     </a>
     <a href="https://github.com/Affaniqbal234/final-autofaucet-bot">
         <img src="https://img.shields.io/badge/github-repo-blue?logo=github">
@@ -104,6 +104,8 @@ python main.py
 
 ![Dutchy Signup](assets/AutofaucetDutchycorpSpace.png)
 ![Dutchy Dashboard](assets/AutofaucetDutchycorpSpace2.png)
+
+Note: Bot Will be slow for first time but after that it will be faster.
 
 ## Troubleshooting
 
