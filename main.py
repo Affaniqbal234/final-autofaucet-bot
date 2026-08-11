@@ -27,14 +27,14 @@ async def main():
         if not state.get("accept_btn_done", False):
             try:
                 print_success("Waiting for Cookies Button to Accept")
-                await safe_click(page, '//*[@id="accept-btn"]', timeout=60000, output="Agree Button Clicked")
+                await safe_click(page, '//*[@id="accept-btn"]', timeout=5000, output="Agree Button Clicked")
                 state.set("accept_btn_done", True)
             except Exception as e:
                 print_error(f"AGREE Cookies button not found: {e}")
         
         if not state.get("minimize_chat", False):
             try:
-                await safe_click(page, '.chatbro_minimize_button', timeout=20000, output="Minimized Chat")
+                await safe_click(page, '.chatbro_minimize_button', timeout=5000, output="Minimized Chat")
                 state.set("minimize_chat", True)
             except Exception as e:
                 print_error(f"Minimized Chat button not found: {e}")

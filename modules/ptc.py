@@ -22,7 +22,7 @@ async def process_ptc_list(page, ptc_url):
                     print_success("[PTC] Done")
                     return
             
-            print_wait("[PTC] Waiting for Submit button to appear under 45 seconds")
+            print_wait("[PTC] Waiting for Submit button to appear in 45 seconds")
             btn = await wait_submit_up_to(page, 45000)
             
             if not btn:
