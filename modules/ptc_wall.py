@@ -13,7 +13,9 @@ async def process_ptc_wall(page, ptc_wall_url):
         print_success(f"Moved to PTC_WALL: {ptc_wall_url}")
         
         visit_sel_css = '#ptc-container > div:nth-child(1) > div > div:nth-child(4) > a'
+        visit_sel_css2 = '#ptc-container > div:nth-child(2) > div > div:nth-child(4) > a'
         visit_sel_xpath = '//*[@id="ptc-container"]/div[1]/div/div[3]/a'
+        visit_sel_xpath2 = '//*[@id="ptc-container"]/div[2]/div/div[3]/a'
         
         while True:
             end_time = time.time() + 60.0
@@ -31,8 +33,20 @@ async def process_ptc_wall(page, ptc_wall_url):
                     if h and await h.is_visible():
                         handle = h
                         break
+                    
+                with suppress(Exception):
+                    h = await page.query_selector(visit_sel_css2)
+                    if h and await h.is_visible():
+                        handle = h
+                        break
                 
-                await asyncio.sleep(0.3)
+                with suppress(Exception):
+                    h = await page.query_selector(f'xpath={visit_sel_xpath2}')
+                    if h and await h.is_visible():
+                        handle = h
+                        break
+                
+                await asyncio.sleep(0.5)
             
             if handle is None:
                 if not page.url.endswith('/ptc/wall.php'):
