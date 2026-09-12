@@ -45,7 +45,7 @@ async def main():
         print_section("COIN ROLL")
         page = await coin_roll(page, config.COIN_ROLL_URL, config.UNLOCK_SELECTOR, 
                                 config.CLAIM_SELECTOR, config.AD_VIDEO_BUTTON)
-        print_section("PTC ADS")
+        print_section("SurfAds")
         await process_ptc_list(page, config.PTC_URL)
         
         print_section("PTC WALL")
